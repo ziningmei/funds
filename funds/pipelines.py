@@ -6,7 +6,10 @@
 # See: http://doc.scrapy.org/en/latest/topics/item-pipeline.html
 import MySQLdb
 import MySQLdb.cursors
+import datetime
 from twisted.enterprise import adbapi
+
+from funds import globalParam
 
 
 class CunjinbaoPipeline(object):
@@ -38,7 +41,7 @@ class CunjinbaoPipeline(object):
     # pipeline默认调用
     def process_item(self, item, spider):
         params = (item['date'], item['perPrice'], item['totalPrice'])
-        query = self.dbpool.runInteraction(self._conditional_insert, params)  # 调用插入的方法
+        insert = self.dbpool.runInteraction(self._conditional_insert, params)  # 调用插入的方法
         # query.addErrback(self._handle_error, item, spider)  # 调用异常处理方法
         return item
 

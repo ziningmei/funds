@@ -9,10 +9,10 @@
 #     http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
 #     http://scrapy.readthedocs.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = 'cunjinbao'
+BOT_NAME = 'funds'
 
-SPIDER_MODULES = ['cunjinbao.spiders']
-NEWSPIDER_MODULE = 'cunjinbao.spiders'
+SPIDER_MODULES = ['funds.spiders']
+NEWSPIDER_MODULE = 'funds.spiders'
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
@@ -75,7 +75,7 @@ MYSQL_PORT = 3306
 # Configure item pipelines
 # See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-   'cunjinbao.pipelines.CunjinbaoPipeline': 300,
+   'funds.pipelines.CunjinbaoPipeline': 300,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
